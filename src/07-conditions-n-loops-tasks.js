@@ -44,8 +44,9 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  if (n > 1) return n * getFactorial(n - 1);
+  return n;
 }
 
 /**
@@ -190,8 +191,10 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  return a > b
+    ? `${isStartIncluded ? '[' : '('}${b}, ${a}${isEndIncluded ? ']' : ')'}`
+    : `${isStartIncluded ? '[' : '('}${a}, ${b}${isEndIncluded ? ']' : ')'}`;
 }
 
 /**
